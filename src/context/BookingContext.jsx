@@ -25,12 +25,12 @@ export function bookingReducer(state, action) {
     case 'GO_HOME':
       return { ...initialState }
     case 'GO_TO_EXHIBITION':
-      return { ...state, screen: 'exhibition', selectedExhibitionId: action.exhibitionId }
+      return { ...initialState, screen: 'exhibition', selectedExhibitionId: action.exhibitionId }
     case 'GO_TO_PLAN_VISIT':
       return { ...state, screen: 'plan-visit' }
     case 'CONFIRM_ORDER': {
-      const orderId = 'ROM-' + Math.random().toString(36).slice(2, 8).toUpperCase()
-      return { ...state, screen: 'confirmation', orderId }
+      const orderId = 'ROM-' + crypto.randomUUID().replace(/-/g, '').slice(0, 6).toUpperCase()
+      return { ...initialState, screen: 'confirmation', orderId }
     }
     case 'SET_STEP':
       return { ...state, step: action.step }
