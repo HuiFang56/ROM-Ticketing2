@@ -39,7 +39,7 @@ export default function ExhibitionList({ exhibitions, todayStr }) {
           </span>
           {isExhibitionOpen(featured, today) ? (
             <span className={styles.badgeOpen}>
-              Adult +${featured.addonPrice.adult}
+              +${featured.addonPrice.adult}
             </span>
           ) : (
             <span className={styles.badgeSoon}>{t('coming-soon')}</span>
