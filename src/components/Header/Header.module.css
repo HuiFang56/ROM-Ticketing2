@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px var(--space-md);
+  background: var(--white);
+  border-bottom: 1px solid var(--black);
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--black);
+  letter-spacing: -0.5px;
+}
+
+.langToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.langBtn {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--grey-30);
+  font-family: var(--font);
+  padding: 0;
+}
+
+.langBtn.active {
+  color: var(--black);
+}
+
+.divider {
+  font-size: 13px;
+  color: var(--grey-30);
+}
