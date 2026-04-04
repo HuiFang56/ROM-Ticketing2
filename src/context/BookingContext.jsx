@@ -60,7 +60,7 @@ export function bookingReducer(state, action) {
   }
 }
 
-const BookingContext = createContext(null)
+export const BookingContext = createContext(null)
 
 export function BookingProvider({ children }) {
   const [state, dispatch] = useReducer(bookingReducer, initialState)

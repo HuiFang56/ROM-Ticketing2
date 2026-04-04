@@ -21,7 +21,7 @@ const translations = {
   },
 }
 
-const LanguageContext = createContext(null)
+export const LanguageContext = createContext(null)
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('en')
