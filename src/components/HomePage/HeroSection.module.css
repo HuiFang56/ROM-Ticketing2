@@ -58,7 +58,7 @@
   text-align: center;
 }
 
-.ctaBtn:focus {
+.ctaBtn:focus-visible {
   outline: 2px solid var(--white);
   outline-offset: 2px;
 }
@@ -74,7 +74,7 @@
   text-align: center;
 }
 
-.planBtn:focus {
+.planBtn:focus-visible {
   outline: 2px solid var(--white);
   outline-offset: 2px;
 }
