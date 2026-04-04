@@ -14,10 +14,6 @@ function renderHomePage() {
 }
 
 describe('HomePage', () => {
-  it('renders without crashing', () => {
-    renderHomePage()
-  })
-
   it('renders the Buy Tickets button from HeroSection', () => {
     renderHomePage()
     expect(screen.getByRole('button', { name: 'Buy Tickets' })).toBeInTheDocument()
