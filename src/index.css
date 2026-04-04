@@ -15,15 +15,15 @@
 }
 @font-face {
   font-family: 'ABCMonumentGrotesk';
-  src: url('./assets/fonts/ABCMonumentGrotesk-Black-Trial.otf') format('opentype');
-  font-weight: 900;
+  src: url('./assets/fonts/ABCMonumentGrotesk-Bold-Trial.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'ABCMonumentGrotesk';
-  src: url('./assets/fonts/ABCMonumentGrotesk-Bold-Trial.otf') format('opentype');
-  font-weight: 700;
+  src: url('./assets/fonts/ABCMonumentGrotesk-Black-Trial.otf') format('opentype');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
@@ -43,9 +43,11 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
+  --space-2xl: 48px;
 
-  --radius: 0px;
+  --radius: 0;
   --max-width: 480px;
+  color-scheme: light;
 }
 
 /* ── Reset ──────────────────────────────────────────────── */
@@ -53,6 +55,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 100%;
 }
 
 html, body, #root {
@@ -63,7 +69,9 @@ body {
   font-family: var(--font);
   background: var(--white);
   color: var(--black);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {
