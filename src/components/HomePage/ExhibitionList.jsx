@@ -22,12 +22,14 @@ export default function ExhibitionList({ exhibitions, todayStr }) {
       {/* Featured card */}
       <button className={styles.featured} onClick={() => handleClick(featured.id)}>
         <div className={styles.featuredImgWrapper}>
-          <img
-            src={featured.imageUrl || undefined}
-            alt={lang === 'zh' ? featured.nameZh : featured.nameEn}
-            loading="lazy"
-            className={styles.featuredImg}
-          />
+          {featured.imageUrl && (
+            <img
+              src={featured.imageUrl}
+              alt={lang === 'zh' ? featured.nameZh : featured.nameEn}
+              loading="lazy"
+              className={styles.featuredImg}
+            />
+          )}
           <div className={styles.featuredGradient} aria-hidden="true" />
           <span className={styles.featuredName}>
             {lang === 'zh' ? featured.nameZh : featured.nameEn}
@@ -50,12 +52,16 @@ export default function ExhibitionList({ exhibitions, todayStr }) {
       {/* Compact rows */}
       {rest.map((ex) => (
         <button key={ex.id} className={styles.row} onClick={() => handleClick(ex.id)}>
-          <img
-            src={ex.imageUrl || undefined}
-            alt={lang === 'zh' ? ex.nameZh : ex.nameEn}
-            loading="lazy"
-            className={styles.rowImg}
-          />
+          {ex.imageUrl ? (
+            <img
+              src={ex.imageUrl}
+              alt={lang === 'zh' ? ex.nameZh : ex.nameEn}
+              loading="lazy"
+              className={styles.rowImg}
+            />
+          ) : (
+            <div className={styles.rowImg} aria-hidden="true" />
+          )}
           <div className={styles.rowBody}>
             <span className={styles.rowName}>
               {lang === 'zh' ? ex.nameZh : ex.nameEn}
