@@ -17,7 +17,7 @@ export default function ExhibitionList({ exhibitions, todayStr }) {
 
   return (
     <section>
-      <p className={styles.label}>{t('special-exhibitions')}</p>
+      <h2 className={styles.label}>{t('special-exhibitions')}</h2>
 
       {/* Featured card */}
       <button className={styles.featured} onClick={() => handleClick(featured.id)}>
