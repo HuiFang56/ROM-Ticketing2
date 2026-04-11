@@ -1,0 +1,63 @@
+/* src/components/BookingPage/Step2Tickets.module.css */
+.wrapper { padding: var(--space-md); }
+.title { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 4px; }
+.subtitle { font-size: 14px; color: var(--text-secondary); margin: 0 0 var(--space-md); }
+
+.rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-sm); }
+
+.row {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rowInfo { display: flex; flex-direction: column; gap: 2px; }
+.rowLabel { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+.rowAge { font-size: 12px; color: var(--text-muted); }
+.rowPrice { font-size: 13px; font-weight: 500; color: var(--gold-text); }
+
+.controls { display: flex; align-items: center; gap: 10px; }
+
+.minus, .plus {
+  width: 28px; height: 28px;
+  border: none; border-radius: 7px;
+  font-size: 18px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.minus { background: var(--bg-secondary); color: var(--gold); }
+.minus:disabled { opacity: 0.3; cursor: default; }
+.plus { background: var(--gold); color: var(--bg-primary); }
+
+.qty { font-size: 16px; font-weight: 600; color: var(--text-primary); min-width: 20px; text-align: center; }
+
+.totalBar {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.totalCount { font-size: 14px; color: var(--text-secondary); }
+.totalAmount { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+
+.taxNote { font-size: 12px; color: var(--text-muted); text-align: center; margin: 0 0 var(--space-md); }
+
+.actions { display: flex; gap: 10px; }
+.backBtn {
+  flex: 1; padding: 15px;
+  background: var(--bg-secondary); color: var(--text-secondary);
+  border: none; border-radius: var(--radius-lg);
+  font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.continueBtn {
+  flex: 2; padding: 15px;
+  background: var(--gold); color: var(--bg-primary);
+  border: none; border-radius: var(--radius-lg);
+  font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.continueBtn:disabled { opacity: 0.4; cursor: default; }
