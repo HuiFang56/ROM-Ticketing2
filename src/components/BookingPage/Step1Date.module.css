@@ -1,0 +1,64 @@
+/* src/components/BookingPage/Step1Date.module.css */
+.wrapper { padding: var(--space-md); }
+
+.title { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 4px; }
+.subtitle { font-size: 14px; color: var(--text-secondary); margin: 0 0 var(--space-md); }
+
+.calendar { background: var(--bg-card); border-radius: var(--radius-lg); padding: var(--space-md); }
+
+.monthNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+.monthLabel { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.navBtn {
+  width: 32px; height: 32px;
+  border: none; border-radius: var(--radius);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 18px; cursor: pointer;
+}
+.navBtn:disabled { opacity: 0.3; cursor: default; }
+
+.grid { width: 100%; }
+.headerRow { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 4px; }
+.dayHeader { font-size: 11px; font-weight: 600; color: var(--text-muted); padding: 4px 0; }
+.dayHeaderClosed { color: var(--text-muted); }
+
+.daysGrid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+
+.day {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: var(--radius);
+  background: transparent;
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.day:hover:not(:disabled) { background: var(--bg-secondary); }
+.dayDisabled { color: var(--text-muted); cursor: default; }
+.daySelected { background: var(--gold) !important; color: var(--bg-primary); font-weight: 700; }
+
+.selectedNote {
+  margin: var(--space-sm) 0;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.actions { margin-top: var(--space-md); }
+.continueBtn {
+  width: 100%; padding: 15px;
+  background: var(--gold); color: var(--bg-primary);
+  border: none; border-radius: var(--radius-lg);
+  font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.continueBtn:disabled { opacity: 0.4; cursor: default; }
