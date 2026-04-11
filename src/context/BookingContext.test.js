@@ -84,3 +84,19 @@ test('unknown action returns state unchanged', () => {
   const next = bookingReducer(initialState, { type: 'UNKNOWN' })
   expect(next).toEqual(initialState)
 })
+
+test('CONFIRM_ORDER preserves booking data', () => {
+  const withData = {
+    ...initialState,
+    date: '2026-04-10',
+    tickets: { ...initialState.tickets, adult: 2 },
+    contact: { name: 'Jane', email: 'jane@example.com', phone: '' },
+    addons: { 'forbidden-city': { adult: 1, child: 0, youth: 0, student: 0, senior: 0 } },
+  }
+  const next = bookingReducer(withData, { type: 'CONFIRM_ORDER' })
+  expect(next.screen).toBe('confirmation')
+  expect(next.orderId).toMatch(/^ROM-[A-Z0-9]{6}$/)
+  expect(next.date).toBe('2026-04-10')
+  expect(next.tickets.adult).toBe(2)
+  expect(next.contact.email).toBe('jane@example.com')
+})

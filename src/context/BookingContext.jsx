@@ -26,7 +26,7 @@ export function bookingReducer(state, action) {
       return { ...state, screen: 'plan-visit' }
     case 'CONFIRM_ORDER': {
       const orderId = 'ROM-' + crypto.randomUUID().replace(/-/g, '').slice(0, 6).toUpperCase()
-      return { ...initialState, screen: 'confirmation', orderId }
+      return { ...state, screen: 'confirmation', orderId }
     }
     case 'SET_STEP':
       return { ...state, step: action.step }
