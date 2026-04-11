@@ -37,3 +37,19 @@ test('calcAddonSubtotal returns correct total', () => {
   const openExhibitions = exhibitions.filter(e => e.id === 'forbidden-city')
   expect(calcAddonSubtotal(addons, openExhibitions)).toBeCloseTo(8 * 2)
 })
+
+test('calcAddonSubtotal returns 0 when addons is empty', () => {
+  expect(calcAddonSubtotal({}, exhibitions)).toBe(0)
+})
+
+test('calcAddonSubtotal returns 0 for missing addon price key', () => {
+  // forbidden-city only has adult/youth/senior in addonPrice — child defaults to 0
+  const addons = { 'forbidden-city': { child: 2, adult: 0, youth: 0, student: 0, senior: 0 } }
+  const openExhibitions = exhibitions.filter(e => e.id === 'forbidden-city')
+  expect(calcAddonSubtotal(addons, openExhibitions)).toBe(0)
+})
+
+test('calcSubtotal handles partial ticket object', () => {
+  expect(calcSubtotal({ adult: 1 })).toBeCloseTo(27.00)
+  expect(calcSubtotal({})).toBe(0)
+})
