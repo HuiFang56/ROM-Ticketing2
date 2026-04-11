@@ -1,4 +1,4 @@
-import { isExhibitionOpen, localTodayStr, exhibitions } from './exhibitions'
+import { formatDateLong, isExhibitionOpen, localTodayStr, exhibitions } from './exhibitions'
 
 describe('isExhibitionOpen', () => {
   const openEx    = { startDate: '2025-01-01', endDate: '2027-12-31' }
@@ -69,5 +69,26 @@ describe('exhibitions array', () => {
       expect(ex).toHaveProperty('startDate')
       expect(ex).toHaveProperty('endDate')
     }
+  })
+})
+
+describe('formatDateLong', () => {
+  test('formatDateLong formats YYYY-MM-DD to long English date', () => {
+    expect(formatDateLong('2026-04-10')).toBe('Friday, April 10, 2026')
+  })
+})
+
+describe('addonPrice extensions', () => {
+  test('forbidden-city addonPrice has child and student keys', () => {
+    const ex = exhibitions.find(e => e.id === 'forbidden-city')
+    expect(ex.addonPrice.child).toBeDefined()
+    expect(ex.addonPrice.student).toBeDefined()
+  })
+
+  test('all exhibitions have addonPrice with 5 ticket type keys', () => {
+    const keys = ['adult', 'child', 'youth', 'student', 'senior']
+    exhibitions.forEach(ex => {
+      keys.forEach(key => expect(ex.addonPrice[key]).toBeDefined())
+    })
   })
 })
