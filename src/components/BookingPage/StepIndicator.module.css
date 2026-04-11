@@ -1,0 +1,69 @@
+/* src/components/BookingPage/StepIndicator.module.css */
+.indicator {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: calc(50% + 14px);
+  width: calc(100% - 28px + var(--space-sm));
+  height: 1px;
+  background: var(--bg-secondary);
+}
+
+.item.done:not(:last-child)::after {
+  background: var(--gold);
+}
+
+.dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.done .dot {
+  background: var(--gold-dim);
+  color: var(--gold);
+}
+
+.active .dot {
+  background: var(--gold);
+  color: var(--bg-primary);
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.done .label,
+.active .label {
+  color: var(--gold-text);
+}
