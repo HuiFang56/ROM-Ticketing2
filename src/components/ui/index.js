@@ -1,3 +1,6 @@
 export { default as QuantityControl } from './QuantityControl'
 export { default as FormField } from './FormField'
 export { default as Button } from './Button'
+export { default as Badge } from './Badge'
+export { default as SectionLabel } from './SectionLabel'
+export { default as StepIndicator } from './StepIndicator'
