@@ -1,0 +1,60 @@
+/* src/components/BookingPage/Step4Contact.module.css */
+.wrapper { padding: var(--space-md); }
+.title { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 4px; }
+.subtitle { font-size: 14px; color: var(--text-secondary); margin: 0 0 var(--space-md); }
+
+.fields { display: flex; flex-direction: column; gap: 14px; margin-bottom: var(--space-md); }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.label {
+  font-size: 12px; font-weight: 600; color: var(--text-secondary);
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.optional { font-size: 12px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+.input {
+  background: var(--bg-card);
+  border: 1px solid rgba(26,26,46,0.12);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: 16px;
+  color: var(--text-primary);
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.input:focus { border-color: var(--gold); }
+.inputError { border-color: #e74c3c; }
+
+.hint { font-size: 12px; color: var(--text-muted); margin: 0; }
+.error { font-size: 12px; color: #e74c3c; margin: 0; }
+
+.summary {
+  background: var(--bg-secondary); border-radius: var(--radius); padding: 14px;
+  margin-bottom: var(--space-md);
+}
+.summaryLabel {
+  font-size: 12px; font-weight: 600; color: var(--text-muted);
+  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;
+}
+.summaryRow {
+  display: flex; justify-content: space-between;
+  font-size: 13px; color: var(--text-secondary); margin-bottom: 3px;
+}
+.summaryDivider { height: 1px; background: rgba(26,26,46,0.1); margin: 6px 0; }
+.summaryTotal {
+  display: flex; justify-content: space-between;
+  font-size: 15px; font-weight: 700; color: var(--text-primary);
+}
+
+.actions { display: flex; gap: 10px; }
+.backBtn {
+  flex: 1; padding: 15px; background: var(--bg-secondary); color: var(--text-secondary);
+  border: none; border-radius: var(--radius-lg); font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.continueBtn {
+  flex: 2; padding: 15px; background: var(--gold); color: var(--bg-primary);
+  border: none; border-radius: var(--radius-lg); font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.continueBtn:disabled { opacity: 0.4; cursor: default; }
