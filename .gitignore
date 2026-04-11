@@ -12,6 +12,7 @@ dist
 dist-ssr
 coverage
 .superpowers/
+.worktrees/
 *.local
 
 # Editor directories and files
