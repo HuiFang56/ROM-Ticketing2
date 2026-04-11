@@ -42,10 +42,10 @@ test('calcAddonSubtotal returns 0 when addons is empty', () => {
   expect(calcAddonSubtotal({}, exhibitions)).toBe(0)
 })
 
-test('calcAddonSubtotal returns 0 for missing addon price key', () => {
-  // forbidden-city only has adult/youth/senior in addonPrice — child defaults to 0
-  const addons = { 'forbidden-city': { child: 2, adult: 0, youth: 0, student: 0, senior: 0 } }
-  const openExhibitions = exhibitions.filter(e => e.id === 'forbidden-city')
+test('calcAddonSubtotal returns 0 for unknown exhibition id', () => {
+  // exhibition id not in data — no addonPrice found, total should be 0
+  const addons = { 'unknown-exhibit': { adult: 2, child: 2, youth: 0, student: 0, senior: 0 } }
+  const openExhibitions = exhibitions.filter(e => e.id === 'unknown-exhibit')
   expect(calcAddonSubtotal(addons, openExhibitions)).toBe(0)
 })
 

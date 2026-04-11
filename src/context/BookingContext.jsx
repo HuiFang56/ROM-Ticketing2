@@ -1,3 +1,4 @@
+// src/context/BookingContext.jsx
 import { createContext, useContext, useReducer } from 'react'
 
 export const initialState = {
@@ -6,8 +7,7 @@ export const initialState = {
   entryExhibitionId: null,
   step: 1,
   date: null,
-  timeSlot: null,
-  tickets: { adult: 0, youth: 0, senior: 0, member: 0 },
+  tickets: { adult: 0, child: 0, youth: 0, student: 0, senior: 0 },
   addons: {},
   contact: { name: '', email: '', phone: '' },
   paymentMethod: null,
@@ -17,11 +17,7 @@ export const initialState = {
 export function bookingReducer(state, action) {
   switch (action.type) {
     case 'GO_TO_BOOKING':
-      return {
-        ...initialState,
-        screen: 'booking',
-        entryExhibitionId: action.exhibitionId ?? null,
-      }
+      return { ...initialState, screen: 'booking', entryExhibitionId: action.exhibitionId ?? null }
     case 'GO_HOME':
       return { ...initialState }
     case 'GO_TO_EXHIBITION':
@@ -36,8 +32,6 @@ export function bookingReducer(state, action) {
       return { ...state, step: action.step }
     case 'SET_DATE':
       return { ...state, date: action.date }
-    case 'SET_TIME_SLOT':
-      return { ...state, timeSlot: action.timeSlot }
     case 'SET_TICKET':
       return { ...state, tickets: { ...state.tickets, [action.ticketType]: Math.max(0, action.qty) } }
     case 'SET_ADDON':
@@ -46,7 +40,7 @@ export function bookingReducer(state, action) {
         addons: {
           ...state.addons,
           [action.exhibitionId]: {
-            ...(state.addons[action.exhibitionId] ?? { adult: 0, youth: 0, senior: 0, member: 0 }),
+            ...(state.addons[action.exhibitionId] ?? { adult: 0, child: 0, youth: 0, student: 0, senior: 0 }),
             [action.ticketType]: Math.min(Math.max(0, action.qty), state.tickets[action.ticketType]),
           },
         },
