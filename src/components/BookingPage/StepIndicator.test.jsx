@@ -1,6 +1,6 @@
 // src/components/BookingPage/StepIndicator.test.jsx
 import { render, screen } from '@testing-library/react'
-import StepIndicator from './StepIndicator'
+import { StepIndicator } from '../ui'
 
 test('renders 5 step labels', () => {
   render(<StepIndicator currentStep={1} />)

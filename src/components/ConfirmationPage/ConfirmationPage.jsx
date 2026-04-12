@@ -2,6 +2,7 @@
 import { useBooking } from '../../context/BookingContext'
 import { formatDateLong, exhibitions } from '../../data/exhibitions'
 import { ticketTypes, calcSubtotal, calcAddonSubtotal, HST_RATE } from '../../data/tickets'
+import { Button } from '../ui'
 import styles from './ConfirmationPage.module.css'
 
 export default function ConfirmationPage() {
@@ -76,12 +77,13 @@ export default function ConfirmationPage() {
         Check your spam folder if you don't see it within a few minutes.
       </p>
 
-      <button
+      <Button
+        variant="primary"
         className={styles.homeBtn}
         onClick={() => dispatch({ type: 'GO_HOME' })}
       >
         Back to Home
-      </button>
+      </Button>
     </main>
   )
 }

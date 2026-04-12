@@ -1,6 +1,6 @@
 // src/components/BookingPage/BookingPage.jsx
 import { useBooking } from '../../context/BookingContext'
-import StepIndicator from './StepIndicator'
+import { StepIndicator } from '../ui'
 import Step1Date from './Step1Date'
 import Step2Tickets from './Step2Tickets'
 import Step3Addons from './Step3Addons'
