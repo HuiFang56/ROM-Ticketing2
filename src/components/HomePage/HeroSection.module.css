@@ -46,35 +46,13 @@
 }
 
 .ctaBtn {
-  width: 100%;
-  background: var(--black);
-  color: var(--white);
-  padding: var(--space-md);
-  font-size: 15px;
-  font-weight: 700;
-  border-radius: var(--radius);
-  margin-top: var(--space-lg);
   display: block;
-  text-align: center;
-}
-
-.ctaBtn:focus-visible {
-  outline: 2px solid var(--white);
-  outline-offset: 2px;
+  width: 100%;
+  margin-top: var(--space-lg);
 }
 
 .planBtn {
-  width: 100%;
-  background: none;
-  color: rgba(255,255,255,0.7);
-  font-size: 13px;
-  font-weight: 500;
-  margin-top: var(--space-sm);
   display: block;
-  text-align: center;
-}
-
-.planBtn:focus-visible {
-  outline: 2px solid var(--white);
-  outline-offset: 2px;
+  width: 100%;
+  margin-top: var(--space-sm);
 }

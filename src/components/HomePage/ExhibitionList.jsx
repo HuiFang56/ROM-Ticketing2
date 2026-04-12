@@ -1,6 +1,8 @@
+// src/components/HomePage/ExhibitionList.jsx
 import { useLang } from '../../context/LanguageContext'
 import { useBooking } from '../../context/BookingContext'
 import { isExhibitionOpen, localTodayStr } from '../../data/exhibitions'
+import { Badge, SectionLabel } from '../ui'
 import styles from './ExhibitionList.module.css'
 
 export default function ExhibitionList({ exhibitions, todayStr }) {
@@ -17,7 +19,7 @@ export default function ExhibitionList({ exhibitions, todayStr }) {
 
   return (
     <section>
-      <h2 className={styles.label}>{t('special-exhibitions')}</h2>
+      <SectionLabel as="h2" className={styles.label}>{t('special-exhibitions')}</SectionLabel>
 
       {/* Featured card */}
       <button className={styles.featured} onClick={() => handleClick(featured.id)}>
@@ -40,11 +42,9 @@ export default function ExhibitionList({ exhibitions, todayStr }) {
             {lang === 'zh' ? featured.dateRangeZh : featured.dateRangeEn}
           </span>
           {isExhibitionOpen(featured, today) ? (
-            <span className={styles.badgeOpen}>
-              +${featured.addonPrice.adult}
-            </span>
+            <Badge variant="open">+${featured.addonPrice.adult}</Badge>
           ) : (
-            <span className={styles.badgeSoon}>{t('coming-soon')}</span>
+            <Badge variant="coming-soon">{t('coming-soon')}</Badge>
           )}
         </div>
       </button>
@@ -72,9 +72,9 @@ export default function ExhibitionList({ exhibitions, todayStr }) {
           </div>
           <div className={styles.rowRight}>
             {isExhibitionOpen(ex, today) ? (
-              <span className={styles.badgeOpen}>+${ex.addonPrice.adult}</span>
+              <Badge variant="open">+${ex.addonPrice.adult}</Badge>
             ) : (
-              <span className={styles.badgeSoon}>{t('coming-soon')}</span>
+              <Badge variant="coming-soon">{t('coming-soon')}</Badge>
             )}
           </div>
         </button>
