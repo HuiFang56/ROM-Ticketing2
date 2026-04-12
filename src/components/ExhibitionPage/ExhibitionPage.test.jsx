@@ -43,7 +43,9 @@ describe('ExhibitionPage', () => {
 
   it('shows "Coming Soon" badge for a future exhibition', () => {
     renderPage({ selectedExhibitionId: 'egypt-pharaohs', todayStr: '2026-04-10' })
-    expect(screen.getByText('Coming Soon')).toBeInTheDocument()
+    // Badge in meta row (span) + disabled CTA button both show "Coming Soon"
+    const allComingSoon = screen.getAllByText('Coming Soon')
+    expect(allComingSoon.length).toBe(2)
   })
 
   it('"Book Tickets" button dispatches GO_TO_BOOKING with the correct exhibitionId', async () => {

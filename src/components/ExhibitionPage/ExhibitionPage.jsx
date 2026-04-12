@@ -36,7 +36,10 @@ export default function ExhibitionPage({ todayStr }) {
 
       <div className={styles.meta}>
         <div className={styles.metaLeft}>
-          {isOpen && <Badge variant="open">{t('open')}</Badge>}
+          {isOpen
+            ? <Badge variant="open">{t('open')}</Badge>
+            : <Badge variant="coming-soon">{t('coming-soon')}</Badge>
+          }
           <span className={styles.dateRange}>{dateRange}</span>
         </div>
         <span className={styles.price}>+${ex.addonPrice.adult} / person</span>
