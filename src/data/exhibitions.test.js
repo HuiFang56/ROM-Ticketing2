@@ -92,3 +92,17 @@ describe('addonPrice extensions', () => {
     })
   })
 })
+
+describe('exhibition descriptions', () => {
+  it('each exhibition has a non-empty descriptionEn', () => {
+    exhibitions.forEach((ex) => {
+      expect(ex.descriptionEn).toBeTruthy()
+    })
+  })
+
+  it('each exhibition has a non-empty descriptionZh', () => {
+    exhibitions.forEach((ex) => {
+      expect(ex.descriptionZh).toBeTruthy()
+    })
+  })
+})

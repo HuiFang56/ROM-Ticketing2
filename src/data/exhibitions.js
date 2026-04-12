@@ -27,6 +27,8 @@ export const exhibitions = [
     addonPrice: { adult: 8, child: 8, youth: 8, student: 8, senior: 8 },
     startDate: '2025-10-12',
     endDate: '2027-06-30',
+    descriptionEn: 'Step inside the walls of China\'s imperial palace and discover five centuries of dynastic history. Over 200 rare artefacts travel outside China for the first time.',
+    descriptionZh: '走进中国皇宫的城墙，探索五个世纪的王朝历史。超过200件珍贵文物首次走出中国。',
   },
   {
     id: 'trex-revealed',
@@ -38,6 +40,8 @@ export const exhibitions = [
     addonPrice: { adult: 6, child: 6, youth: 6, student: 6, senior: 6 },
     startDate: '2025-03-05',
     endDate: '2027-03-31',
+    descriptionEn: 'Come face to face with the most complete T.rex skeleton ever found. Cutting-edge science and life-size reconstructions reveal how this apex predator lived and hunted.',
+    descriptionZh: '与有史以来最完整的霸王龙骨架面对面。前沿科学与真实比例的复原展示了这种顶级掠食者的生存与狩猎方式。',
   },
   {
     id: 'egypt-pharaohs',
@@ -49,5 +53,7 @@ export const exhibitions = [
     addonPrice: { adult: 10, child: 10, youth: 10, student: 10, senior: 10 },
     startDate: '2026-06-01',
     endDate: null,
+    descriptionEn: 'Journey to the world of ancient Egypt through monumental sculpture, gilded treasures, and the stories of the pharaohs who shaped one of history\'s greatest civilisations.',
+    descriptionZh: '通过宏伟的雕塑、镀金的珍宝，以及塑造了人类最伟大文明之一的法老们的故事，踏上古埃及之旅。',
   },
 ]

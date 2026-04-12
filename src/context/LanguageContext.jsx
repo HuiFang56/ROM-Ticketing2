@@ -3,21 +3,25 @@ import { createContext, useContext, useState } from 'react'
 const translations = {
   en: {
     'buy-tickets':        'Buy Tickets',
+    'book-tickets':       'Book Tickets',
     'back':               'Back',
     'plan-visit':         'Plan Your Visit',
     'special-exhibitions':'Special Exhibitions',
     'add-on':             'Add-on',
     'coming-soon':        'Coming Soon',
     'includes-ga':        'Includes General Admission',
+    'open':               'Open',
   },
   zh: {
     'buy-tickets':        '购票',
+    'book-tickets':       '立即订票',
     'back':               '返回',
     'plan-visit':         '参观信息',
     'special-exhibitions':'特别展览',
     'add-on':             '加购',
     'coming-soon':        '即将开展',
     'includes-ga':        '含通用入场票',
+    'open':               '展出中',
   },
 }
 
