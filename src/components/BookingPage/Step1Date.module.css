@@ -55,10 +55,4 @@
 }
 
 .actions { margin-top: var(--space-md); }
-.continueBtn {
-  width: 100%; padding: 15px;
-  background: var(--gold); color: var(--bg-primary);
-  border: none; border-radius: var(--radius-lg);
-  font-size: 16px; font-weight: 700; cursor: pointer;
-}
-.continueBtn:disabled { opacity: 0.4; cursor: default; }
+.continueBtn { width: 100%; }

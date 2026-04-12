@@ -2,6 +2,7 @@
 import { useBooking } from '../../context/BookingContext'
 import { exhibitions } from '../../data/exhibitions'
 import { ticketTypes, calcSubtotal, calcAddonSubtotal, HST_RATE } from '../../data/tickets'
+import { SectionLabel, Button } from '../ui'
 import styles from './Step5Payment.module.css'
 
 const METHODS = [
@@ -60,7 +61,7 @@ export default function Step5Payment() {
         </div>
       </div>
 
-      <div className={styles.methodLabel}>Pay with</div>
+      <SectionLabel className={styles.methodLabel}>Pay with</SectionLabel>
       <div className={styles.methods}>
         {METHODS.map(m => (
           <button
@@ -89,12 +90,17 @@ export default function Step5Payment() {
       )}
 
       <div className={styles.actions}>
-        <button className={styles.backBtn} onClick={() => dispatch({ type: 'SET_STEP', step: 4 })}>← Back</button>
-        <button
+        <Button
+          variant="secondary"
+          className={styles.backBtn}
+          onClick={() => dispatch({ type: 'SET_STEP', step: 4 })}
+        >← Back</Button>
+        <Button
+          variant="primary"
           className={styles.confirmBtn}
           disabled={!selected}
           onClick={() => dispatch({ type: 'CONFIRM_ORDER' })}
-        >Confirm &amp; Pay</button>
+        >Confirm &amp; Pay</Button>
       </div>
     </section>
   )

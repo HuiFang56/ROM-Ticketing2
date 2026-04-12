@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useBooking } from '../../context/BookingContext'
 import { localTodayStr, formatDateLong } from '../../data/exhibitions'
+import { Button } from '../ui'
 import styles from './Step1Date.module.css'
 
 const DAY_LABELS = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
@@ -122,13 +123,14 @@ export default function Step1Date() {
       )}
 
       <div className={styles.actions}>
-        <button
+        <Button
+          variant="primary"
           className={styles.continueBtn}
           disabled={!state.date}
           onClick={() => dispatch({ type: 'SET_STEP', step: 2 })}
         >
           Continue →
-        </button>
+        </Button>
       </div>
     </section>
   )
