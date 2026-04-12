@@ -2,6 +2,7 @@
 import { useBooking } from '../../context/BookingContext'
 import { ticketTypes, calcSubtotal } from '../../data/tickets'
 import { formatDateLong } from '../../data/exhibitions'
+import { QuantityControl, Button } from '../ui'
 import styles from './Step2Tickets.module.css'
 
 export default function Step2Tickets() {
@@ -9,8 +10,8 @@ export default function Step2Tickets() {
   const subtotal = calcSubtotal(state.tickets)
   const totalQty = Object.values(state.tickets).reduce((a, b) => a + b, 0)
 
-  function adjust(id, delta) {
-    dispatch({ type: 'SET_TICKET', ticketType: id, qty: (state.tickets[id] ?? 0) + delta })
+  function setTicket(id, qty) {
+    dispatch({ type: 'SET_TICKET', ticketType: id, qty })
   }
 
   return (
@@ -21,7 +22,6 @@ export default function Step2Tickets() {
       <div className={styles.rows}>
         {ticketTypes.map(({ id, labelEn, price }) => {
           const qty = state.tickets[id] ?? 0
-          // Split label if it includes age range in parens, e.g. "Child (4–14)"
           const parenIdx = labelEn.indexOf(' (')
           const baseName = parenIdx > -1 ? labelEn.slice(0, parenIdx) : labelEn
           const ageNote = parenIdx > -1 ? labelEn.slice(parenIdx + 1) : null
@@ -32,20 +32,12 @@ export default function Step2Tickets() {
                 {ageNote !== null && <span className={styles.rowAge}>{ageNote}</span>}
                 <span className={styles.rowPrice}>${price.toFixed(2)}</span>
               </div>
-              <div className={styles.controls}>
-                <button
-                  className={styles.minus}
-                  aria-label={`Decrease ${baseName}`}
-                  disabled={qty === 0}
-                  onClick={() => adjust(id, -1)}
-                >−</button>
-                <span className={styles.qty}>{qty}</span>
-                <button
-                  className={styles.plus}
-                  aria-label={`Increase ${baseName}`}
-                  onClick={() => adjust(id, 1)}
-                >+</button>
-              </div>
+              <QuantityControl
+                value={qty}
+                onChange={(n) => setTicket(id, n)}
+                min={0}
+                ariaLabel={baseName}
+              />
             </div>
           )
         })}
@@ -58,15 +50,17 @@ export default function Step2Tickets() {
       <p className={styles.taxNote}>Applicable taxes will be added at checkout</p>
 
       <div className={styles.actions}>
-        <button
+        <Button
+          variant="secondary"
           className={styles.backBtn}
           onClick={() => dispatch({ type: 'SET_STEP', step: 1 })}
-        >← Back</button>
-        <button
+        >← Back</Button>
+        <Button
+          variant="primary"
           className={styles.continueBtn}
           disabled={totalQty === 0}
           onClick={() => dispatch({ type: 'SET_STEP', step: 3 })}
-        >Continue →</button>
+        >Continue →</Button>
       </div>
     </section>
   )
