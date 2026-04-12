@@ -1,0 +1,62 @@
+/* src/components/BookingPage/Step3Addons.module.css */
+.wrapper { padding: var(--space-md); }
+.title { font-size: 18px; font-weight: 700; color: var(--black); margin: 0 0 4px; }
+.subtitle { font-size: 14px; color: var(--grey-60); margin: 0 0 var(--space-md); }
+.empty { font-size: 14px; color: var(--grey-60); text-align: center; padding: var(--space-xl) 0; }
+
+.cards { display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-md); }
+
+.card {
+  border: 1px solid var(--grey-30);
+  padding: var(--space-md);
+}
+
+.cardActive {
+  border-color: var(--black);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.exName { font-size: 14px; font-weight: 700; color: var(--black); }
+.exDate { font-size: 12px; color: var(--grey-60); }
+.exPrice { font-size: 13px; font-weight: 600; color: var(--black); white-space: nowrap; }
+
+.typeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid var(--grey-05);
+}
+
+.typeLabel { font-size: 13px; color: var(--grey-60); }
+
+.cardSubtotal {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  text-align: right;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--grey-30);
+  margin-top: var(--space-sm);
+}
+
+.totalBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  background: var(--grey-05);
+  margin-bottom: var(--space-md);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.actions { display: flex; gap: 10px; }
+.backBtn { flex: 1; }
+.continueBtn { flex: 2; }

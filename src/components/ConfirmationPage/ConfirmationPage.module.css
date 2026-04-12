@@ -1,0 +1,58 @@
+/* src/components/ConfirmationPage/ConfirmationPage.module.css */
+.page {
+  padding: var(--space-md);
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--gold-dim); color: var(--gold);
+  font-size: 28px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: var(--space-md) auto var(--space-sm);
+}
+
+.heading { font-size: 22px; font-weight: 800; color: var(--text-primary); margin: 0 0 6px; }
+.emailSent { font-size: 15px; color: var(--text-secondary); margin: 0; }
+.email { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 2px 0 var(--space-md); }
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gold-dim);
+  padding: var(--space-md);
+  text-align: left;
+  margin-bottom: var(--space-md);
+}
+
+.orderId {
+  font-size: 12px; font-weight: 600; color: var(--text-muted);
+  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+}
+
+.row {
+  display: flex; justify-content: space-between;
+  font-size: 14px; color: var(--text-secondary); margin-bottom: 4px;
+}
+.row span:last-child { color: var(--text-primary); font-weight: 500; }
+
+.divider { height: 1px; background: rgba(26,26,46,0.08); margin: 8px 0; }
+
+.total {
+  font-size: 16px; font-weight: 700; color: var(--text-primary);
+}
+.total span:last-child { color: var(--text-primary); }
+
+.note {
+  font-size: 13px; color: var(--text-muted);
+  margin: 0 0 var(--space-md);
+  line-height: 1.5;
+}
+
+.homeBtn {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-lg);
+}

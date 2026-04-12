@@ -1,5 +1,6 @@
 import { useLang } from '../../context/LanguageContext'
 import { useBooking } from '../../context/BookingContext'
+import { Button } from '../ui'
 import styles from './HeroSection.module.css'
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=900&q=80'
@@ -34,18 +35,20 @@ export default function HeroSection() {
             </>
           )}
         </h1>
-        <button
+        <Button
+          variant="primary"
           className={styles.ctaBtn}
           onClick={() => dispatch({ type: 'GO_TO_BOOKING', exhibitionId: null })}
         >
           {t('buy-tickets')}
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="text"
           className={styles.planBtn}
           onClick={() => dispatch({ type: 'GO_TO_PLAN_VISIT' })}
         >
           {t('plan-visit')}<span aria-hidden="true"> →</span>
-        </button>
+        </Button>
       </div>
     </section>
   )

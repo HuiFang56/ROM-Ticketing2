@@ -1,0 +1,38 @@
+/* src/components/BookingPage/Step2Tickets.module.css */
+.wrapper { padding: var(--space-md); }
+.title { font-size: 18px; font-weight: 700; color: var(--black); margin: 0 0 4px; }
+.subtitle { font-size: 14px; color: var(--grey-60); margin: 0 0 var(--space-md); }
+
+.rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--space-sm); }
+
+.row {
+  background: var(--grey-05);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rowInfo { display: flex; flex-direction: column; gap: 2px; }
+.rowLabel { font-size: 16px; font-weight: 600; color: var(--black); }
+.rowAge { font-size: 12px; color: var(--grey-60); }
+.rowPrice { font-size: 13px; font-weight: 500; color: var(--grey-60); }
+
+.totalBar {
+  background: var(--grey-05);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.totalCount { font-size: 14px; color: var(--grey-60); }
+.totalAmount { font-size: 16px; font-weight: 700; color: var(--black); }
+
+.taxNote { font-size: 12px; color: var(--grey-60); text-align: center; margin: 0 0 var(--space-md); }
+
+.actions { display: flex; gap: 10px; }
+.backBtn { flex: 1; }
+.continueBtn { flex: 2; }

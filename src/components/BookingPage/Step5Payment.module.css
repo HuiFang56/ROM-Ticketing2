@@ -1,0 +1,57 @@
+/* src/components/BookingPage/Step5Payment.module.css */
+.wrapper { padding: var(--space-md); }
+.title { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 var(--space-md); }
+
+.summary {
+  background: var(--bg-secondary); border-radius: var(--radius); padding: 14px;
+  margin-bottom: var(--space-md);
+}
+.summaryLabel {
+  font-size: 12px; font-weight: 600; color: var(--text-muted);
+  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;
+}
+.summaryRow {
+  display: flex; justify-content: space-between;
+  font-size: 13px; color: var(--text-secondary); margin-bottom: 3px;
+}
+.summaryDivider { height: 1px; background: rgba(26,26,46,0.1); margin: 6px 0; }
+.summaryTotal {
+  display: flex; justify-content: space-between;
+  font-size: 16px; font-weight: 700; color: var(--text-primary);
+}
+
+.methodLabel {
+  padding: var(--space-md) 0 var(--space-sm);
+}
+.methods { display: flex; gap: 10px; margin-bottom: var(--space-md); }
+.method {
+  flex: 1; padding: 14px 10px;
+  background: var(--bg-card);
+  border: 1.5px solid rgba(26,26,46,0.07);
+  border-radius: var(--radius); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.methodSelected { border-color: rgba(181,136,26,0.5); }
+.methodEmoji { font-size: 22px; }
+.methodName { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+
+.qrBox {
+  background: var(--bg-card); border-radius: var(--radius); padding: var(--space-md);
+  text-align: center; margin-bottom: var(--space-md);
+}
+.qrPlaceholder {
+  width: 120px; height: 120px; background: var(--bg-secondary);
+  border-radius: var(--radius); margin: 0 auto 8px;
+}
+.qrHint { font-size: 12px; color: var(--text-secondary); margin: 0; }
+
+.deepLink {
+  display: block; width: 100%; padding: 15px; text-align: center;
+  background: #07c160; color: #fff;
+  border-radius: var(--radius-lg); font-size: 16px; font-weight: 700;
+  text-decoration: none; margin-bottom: var(--space-md);
+}
+
+.actions { display: flex; gap: 10px; }
+.backBtn { flex: 1; }
+.confirmBtn { flex: 2; }

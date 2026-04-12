@@ -1,0 +1,32 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--grey-30);
+  background: var(--white);
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
