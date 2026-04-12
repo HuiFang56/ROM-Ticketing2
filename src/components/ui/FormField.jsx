@@ -1,9 +1,9 @@
 import styles from './FormField.module.css'
 
-export default function FormField({ label, error, hint, children }) {
+export default function FormField({ label, htmlFor, error, hint, children }) {
   return (
     <div className={styles.field}>
-      <label className={styles.label}>{label}</label>
+      <label htmlFor={htmlFor} className={styles.label}>{label}</label>
       {children}
       {error
         ? <p className={styles.error}>{error}</p>

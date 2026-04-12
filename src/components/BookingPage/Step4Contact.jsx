@@ -4,6 +4,7 @@ import { useBooking } from '../../context/BookingContext'
 import { formatDateLong } from '../../data/exhibitions'
 import { ticketTypes, calcSubtotal, calcAddonSubtotal } from '../../data/tickets'
 import { exhibitions } from '../../data/exhibitions'
+import { FormField, Button } from '../ui'
 import styles from './Step4Contact.module.css'
 
 function isValidEmail(email) {
@@ -43,8 +44,7 @@ export default function Step4Contact() {
       <p className={styles.subtitle}>Confirmation will be sent to your email</p>
 
       <div className={styles.fields}>
-        <div className={styles.field}>
-          <label htmlFor="contact-name" className={styles.label}>Full Name</label>
+        <FormField label="Full Name" htmlFor="contact-name">
           <input
             id="contact-name"
             type="text"
@@ -53,10 +53,9 @@ export default function Step4Contact() {
             onChange={e => handleField('name', e.target.value)}
             autoComplete="name"
           />
-        </div>
+        </FormField>
 
-        <div className={styles.field}>
-          <label htmlFor="contact-email" className={styles.label}>Email</label>
+        <FormField label="Email" htmlFor="contact-email" error={emailError} hint={emailError ? undefined : 'Tickets will be sent here'}>
           <input
             id="contact-email"
             type="email"
@@ -65,14 +64,9 @@ export default function Step4Contact() {
             onChange={e => handleField('email', e.target.value)}
             autoComplete="email"
           />
-          {emailError && <p className={styles.error}>{emailError}</p>}
-          {!emailError && <p className={styles.hint}>Tickets will be sent here</p>}
-        </div>
+        </FormField>
 
-        <div className={styles.field}>
-          <label htmlFor="contact-phone" className={styles.label}>
-            Phone <span className={styles.optional}>(optional)</span>
-          </label>
+        <FormField label="Phone (optional)" htmlFor="contact-phone">
           <input
             id="contact-phone"
             type="tel"
@@ -81,7 +75,7 @@ export default function Step4Contact() {
             onChange={e => handleField('phone', e.target.value)}
             autoComplete="tel"
           />
-        </div>
+        </FormField>
       </div>
 
       <div className={styles.summary}>
@@ -111,12 +105,17 @@ export default function Step4Contact() {
       </div>
 
       <div className={styles.actions}>
-        <button className={styles.backBtn} onClick={() => dispatch({ type: 'SET_STEP', step: 3 })}>← Back</button>
-        <button
+        <Button
+          variant="secondary"
+          className={styles.backBtn}
+          onClick={() => dispatch({ type: 'SET_STEP', step: 3 })}
+        >← Back</Button>
+        <Button
+          variant="primary"
           className={styles.continueBtn}
           disabled={!canContinue}
           onClick={handleContinue}
-        >Continue →</button>
+        >Continue →</Button>
       </div>
     </section>
   )
