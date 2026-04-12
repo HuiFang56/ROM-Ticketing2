@@ -4,6 +4,7 @@ import { useBooking } from '../../context/BookingContext'
 import { useLang } from '../../context/LanguageContext'
 import { exhibitions, isExhibitionOpen } from '../../data/exhibitions'
 import { ticketTypes, calcAddonSubtotal } from '../../data/tickets'
+import { QuantityControl, Button } from '../ui'
 import styles from './Step3Addons.module.css'
 
 export default function Step3Addons() {
@@ -16,7 +17,6 @@ export default function Step3Addons() {
 
   const purchasedTypes = ticketTypes.filter(({ id }) => (state.tickets[id] ?? 0) > 0)
 
-  // Pre-fill entry exhibition with purchased ticket quantities on mount
   useEffect(() => {
     const { entryExhibitionId, addons, tickets } = state
     if (entryExhibitionId && !addons[entryExhibitionId]) {
@@ -28,9 +28,8 @@ export default function Step3Addons() {
 
   const addonSubtotal = calcAddonSubtotal(state.addons, openExhibitions)
 
-  function adjust(exhibitionId, ticketType, delta) {
-    const current = (state.addons[exhibitionId]?.[ticketType] ?? 0)
-    dispatch({ type: 'SET_ADDON', exhibitionId, ticketType, qty: current + delta })
+  function setAddon(exhibitionId, ticketType, qty) {
+    dispatch({ type: 'SET_ADDON', exhibitionId, ticketType, qty })
   }
 
   return (
@@ -68,21 +67,13 @@ export default function Step3Addons() {
                 return (
                   <div key={id} className={styles.typeRow}>
                     <span className={styles.typeLabel}>{baseName} × {maxQty}</span>
-                    <div className={styles.controls}>
-                      <button
-                        className={styles.minus}
-                        aria-label={`Decrease ${baseName} for ${name}`}
-                        disabled={qty === 0}
-                        onClick={() => adjust(ex.id, id, -1)}
-                      >−</button>
-                      <span className={styles.qty}>{qty}</span>
-                      <button
-                        className={styles.plus}
-                        aria-label={`Increase ${baseName} for ${name}`}
-                        disabled={qty >= maxQty}
-                        onClick={() => adjust(ex.id, id, 1)}
-                      >+</button>
-                    </div>
+                    <QuantityControl
+                      value={qty}
+                      onChange={(n) => setAddon(ex.id, id, n)}
+                      min={0}
+                      max={maxQty}
+                      ariaLabel={`${baseName} for ${name}`}
+                    />
                   </div>
                 )
               })}
@@ -107,8 +98,16 @@ export default function Step3Addons() {
       )}
 
       <div className={styles.actions}>
-        <button className={styles.backBtn} onClick={() => dispatch({ type: 'SET_STEP', step: 2 })}>← Back</button>
-        <button className={styles.continueBtn} onClick={() => dispatch({ type: 'SET_STEP', step: 4 })}>Continue →</button>
+        <Button
+          variant="secondary"
+          className={styles.backBtn}
+          onClick={() => dispatch({ type: 'SET_STEP', step: 2 })}
+        >← Back</Button>
+        <Button
+          variant="primary"
+          className={styles.continueBtn}
+          onClick={() => dispatch({ type: 'SET_STEP', step: 4 })}
+        >Continue →</Button>
       </div>
     </section>
   )

@@ -1,54 +1,62 @@
 /* src/components/BookingPage/Step3Addons.module.css */
 .wrapper { padding: var(--space-md); }
-.title { font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 4px; }
-.subtitle { font-size: 14px; color: var(--text-secondary); margin: 0 0 var(--space-md); }
-.empty { font-size: 14px; color: var(--text-muted); margin-bottom: var(--space-md); }
+.title { font-size: 18px; font-weight: 700; color: var(--black); margin: 0 0 4px; }
+.subtitle { font-size: 14px; color: var(--grey-60); margin: 0 0 var(--space-md); }
+.empty { font-size: 14px; color: var(--grey-60); text-align: center; padding: var(--space-xl) 0; }
 
-.cards { display: flex; flex-direction: column; gap: 12px; margin-bottom: var(--space-sm); }
+.cards { display: flex; flex-direction: column; gap: var(--space-sm); margin-bottom: var(--space-md); }
 
 .card {
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  border: 1.5px solid rgba(26,26,46,0.07);
-  padding: 14px;
+  border: 1px solid var(--grey-30);
+  padding: var(--space-md);
 }
-.cardActive { border-color: rgba(181,136,26,0.35); }
 
-.cardHeader { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-.exName { font-size: 15px; font-weight: 600; color: var(--text-primary); }
-.exDate { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
-.exPrice { font-size: 13px; font-weight: 500; color: var(--gold-text); white-space: nowrap; margin-left: 8px; }
-
-.typeRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-.typeLabel { font-size: 13px; color: var(--text-secondary); }
-.controls { display: flex; align-items: center; gap: 8px; }
-
-.minus, .plus {
-  width: 24px; height: 24px; border: none; border-radius: 6px;
-  font-size: 16px; font-weight: 700; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
+.cardActive {
+  border-color: var(--black);
 }
-.minus { background: var(--bg-secondary); color: var(--gold); }
-.minus:disabled { opacity: 0.3; cursor: default; }
-.plus { background: var(--gold); color: var(--bg-primary); }
-.plus:disabled { opacity: 0.3; cursor: default; }
-.qty { font-size: 14px; font-weight: 600; color: var(--text-primary); min-width: 16px; text-align: center; }
 
-.cardSubtotal { font-size: 13px; font-weight: 500; color: var(--gold-text); text-align: right; margin-top: 8px; }
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-sm);
+}
+
+.exName { font-size: 14px; font-weight: 700; color: var(--black); }
+.exDate { font-size: 12px; color: var(--grey-60); }
+.exPrice { font-size: 13px; font-weight: 600; color: var(--black); white-space: nowrap; }
+
+.typeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid var(--grey-05);
+}
+
+.typeLabel { font-size: 13px; color: var(--grey-60); }
+
+.cardSubtotal {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  text-align: right;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--grey-30);
+  margin-top: var(--space-sm);
+}
 
 .totalBar {
-  background: var(--bg-secondary); border-radius: var(--radius); padding: 14px;
-  display: flex; justify-content: space-between;
-  font-size: 15px; font-weight: 700; color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  background: var(--grey-05);
   margin-bottom: var(--space-md);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
 }
 
 .actions { display: flex; gap: 10px; }
-.backBtn {
-  flex: 1; padding: 15px; background: var(--bg-secondary); color: var(--text-secondary);
-  border: none; border-radius: var(--radius-lg); font-size: 15px; font-weight: 600; cursor: pointer;
-}
-.continueBtn {
-  flex: 2; padding: 15px; background: var(--gold); color: var(--bg-primary);
-  border: none; border-radius: var(--radius-lg); font-size: 16px; font-weight: 700; cursor: pointer;
-}
+.backBtn { flex: 1; }
+.continueBtn { flex: 2; }
