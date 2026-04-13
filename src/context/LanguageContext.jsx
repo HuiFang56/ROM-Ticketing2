@@ -11,6 +11,11 @@ const translations = {
     'coming-soon':        'Coming Soon',
     'includes-ga':        'Includes General Admission',
     'open':               'Open',
+    'hours':              'Hours',
+    'location':           'Location',
+    'getting-here':       'Getting Here',
+    'accessibility':      'Accessibility',
+    'open-in-maps':       'Open in Maps',
   },
   zh: {
     'buy-tickets':        '购票',
@@ -22,6 +27,11 @@ const translations = {
     'coming-soon':        '即将开展',
     'includes-ga':        '含通用入场票',
     'open':               '展出中',
+    'hours':              '开放时间',
+    'location':           '地址',
+    'getting-here':       '交通指南',
+    'accessibility':      '无障碍设施',
+    'open-in-maps':       '查看地图',
   },
 }
 
