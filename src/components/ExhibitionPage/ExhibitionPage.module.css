@@ -50,7 +50,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--space-md);
-  border-bottom: 1px solid var(--grey-05);
+  border-bottom: 1px solid var(--grey-10);
 }
 
 .metaLeft {

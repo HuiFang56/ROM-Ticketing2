@@ -20,7 +20,7 @@
 
 .section {
   padding: var(--space-md);
-  border-bottom: 1px solid var(--grey-05);
+  border-bottom: 1px solid var(--grey-10);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
