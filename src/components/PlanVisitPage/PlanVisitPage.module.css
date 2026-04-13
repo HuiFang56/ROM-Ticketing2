@@ -1,0 +1,64 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.back {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 14px;
+  color: var(--grey-60);
+  text-align: left;
+}
+
+.title {
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.section {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--grey-05);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--black);
+  line-height: 1.5;
+}
+
+.text {
+  font-size: 14px;
+  color: var(--black);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mapLink {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.cta {
+  padding: var(--space-md);
+  padding-top: var(--space-lg);
+}
+
+.ctaBtn {
+  width: 100%;
+}
