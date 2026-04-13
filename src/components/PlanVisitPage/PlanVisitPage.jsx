@@ -18,7 +18,7 @@ export default function PlanVisitPage() {
 
       <h1 className={styles.title}>{t('plan-visit')}</h1>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label={t('hours')}>
         <SectionLabel as="h2">{t('hours')}</SectionLabel>
         <div className={styles.rows}>
           {lang === 'zh' ? (
@@ -37,7 +37,7 @@ export default function PlanVisitPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label={t('location')}>
         <SectionLabel as="h2">{t('location')}</SectionLabel>
         <p className={styles.text}>100 Queen's Park, Toronto, ON M5S 2C6</p>
         <a
@@ -46,11 +46,11 @@ export default function PlanVisitPage() {
           rel="noopener noreferrer"
           className={styles.mapLink}
         >
-          {t('open-in-maps')} →
+          {t('open-in-maps')}<span aria-hidden="true"> →</span>
         </a>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label={t('getting-here')}>
         <SectionLabel as="h2">{t('getting-here')}</SectionLabel>
         {lang === 'zh' ? (
           <>
@@ -65,7 +65,7 @@ export default function PlanVisitPage() {
         )}
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} aria-label={t('accessibility')}>
         <SectionLabel as="h2">{t('accessibility')}</SectionLabel>
         <p className={styles.text}>
           {lang === 'zh'
