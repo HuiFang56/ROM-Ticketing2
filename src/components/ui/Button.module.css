@@ -5,7 +5,8 @@
   padding: 14px 20px;
   font-family: var(--font);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.3px;
   cursor: pointer;
   border: none;
   border-radius: var(--radius);

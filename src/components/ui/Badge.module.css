@@ -13,6 +13,7 @@
 }
 
 .comingSoon {
-  background: var(--grey-05);
+  background: var(--white);
   color: var(--grey-60);
+  border: 1px solid var(--grey-30);
 }
