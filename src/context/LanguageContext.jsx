@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 
-const translations = {
+export const translations = {
   en: {
     'buy-tickets':        'Buy Tickets',
     'book-tickets':       'Book Tickets',

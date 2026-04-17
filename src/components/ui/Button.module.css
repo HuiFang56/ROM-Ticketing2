@@ -18,6 +18,14 @@
   cursor: not-allowed;
 }
 
+.btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.btn:active:not(:disabled) {
+  opacity: 0.7;
+}
+
 .primary {
   background: var(--black);
   color: var(--white);
