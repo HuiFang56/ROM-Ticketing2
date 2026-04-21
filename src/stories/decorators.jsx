@@ -1,6 +1,6 @@
 import { LanguageContext, translations } from '../context/LanguageContext'
 import { BookingContext } from '../context/BookingContext'
-import { fn } from '@storybook/test'
+import { fn } from 'storybook/test'
 
 function mockLang(lang) {
   return {
